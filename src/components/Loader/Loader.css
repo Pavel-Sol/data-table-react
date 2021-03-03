@@ -1,0 +1,9 @@
+.loader__container {
+   width: 100px;
+   height: 100px;
+   margin: 50px auto;
+}
+
+.loader__container img {
+   width: 100%;
+}

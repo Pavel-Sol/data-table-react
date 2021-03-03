@@ -1,0 +1,33 @@
+import React from 'react'
+
+function Table(props) {
+   console.log(props.data)
+   return (
+      <table className='table'>
+         <thead>
+            <tr>
+               <th>ID</th>
+               <th>Firt Name</th>
+               <th>Last Name</th>
+               <th>Email</th>
+               <th>Phone</th>
+            </tr>
+         </thead>
+         <tbody>
+            {
+               props.data.map(item => {
+                  return <tr key={item.id + item.phone}>
+                     <td>{item.id}</td>
+                     <td>{item.firstName}</td>
+                     <td>{item.lastName}</td>
+                     <td>{item.email}</td>
+                     <td>{item.phone}</td>
+                  </tr>
+               })
+            }
+         </tbody>
+      </table>
+   )
+}
+
+export default Table
