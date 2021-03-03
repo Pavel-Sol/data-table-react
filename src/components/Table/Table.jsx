@@ -1,16 +1,27 @@
 import React from 'react'
+import Direction from './Direction/Direction'
+import './Table.css'
 
 function Table(props) {
-   console.log(props.data)
    return (
       <table className='table'>
          <thead>
             <tr>
-               <th>ID</th>
-               <th>Firt Name</th>
-               <th>Last Name</th>
-               <th>Email</th>
-               <th>Phone</th>
+               <th onClick={props.onSort.bind(null, 'id')}>
+                  id{props.sortField === 'id' ? <> <Direction sort={props.sort} /></> : null}
+               </th>
+               <th onClick={props.onSort.bind(null, 'firstName')}>
+                  First Name{props.sortField === 'firstName' ? <> <Direction sort={props.sort} /></> : null}
+               </th>
+               <th onClick={props.onSort.bind(null, 'lastName')}>
+                  Last Name{props.sortField === 'lastName' ? <> <Direction sort={props.sort} /></> : null}
+               </th>
+               <th onClick={props.onSort.bind(null, 'email')}>
+                  Email{props.sortField === 'email' ? <> <Direction sort={props.sort} /></> : null}
+               </th>
+               <th onClick={props.onSort.bind(null, 'phone')}>
+                  Phone{props.sortField === 'phone' ? <> <Direction sort={props.sort} /></> : null}
+               </th>
             </tr>
          </thead>
          <tbody>

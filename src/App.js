@@ -1,5 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import _ from 'lodash'
 import './App.css'
 import Loader from './components/Loader/Loader'
 import Table from './components/Table/Table'
@@ -8,7 +9,9 @@ class App extends React.Component {
 
   state = {
     isLoading: true,
-    data: []
+    data: [],
+    sort: 'asc',
+    sortField: 'id'
   }
 
 async componentDidMount() {
@@ -18,9 +21,24 @@ async componentDidMount() {
 
   this.setState({
     isLoading: false,
-    data
+    data: _.orderBy(data, this.state.sortField, this.state.sort)
   })
 }
+
+
+onSort = sortField => { 
+  let clonedData = this.state.data.concat()
+  let sort = this.state.sort === 'asc' ? 'desc' : 'asc'
+  let data = _.orderBy(clonedData, sortField, sort)
+
+  this.setState({
+    data: data,
+    sort: sort,
+    sortField: sortField
+  }) 
+}
+
+
 
   render() {
     return (
@@ -29,7 +47,10 @@ async componentDidMount() {
         {
           this.state.isLoading
           ? <Loader />
-          : <Table data={this.state.data} />
+          : <Table data={this.state.data}
+          onSort={this.onSort}
+          sort={this.state.sort}
+          sortField={this.state.sortField} />
         }
       </div>
      );
