@@ -45,9 +45,9 @@ onSort = sortField => {
   let data = _.orderBy(clonedData, sortField, sort)
 
   this.setState({
-    data: data,
-    sort: sort,
-    sortField: sortField
+    data,
+    sort,
+    sortField
   }) 
 }
 
