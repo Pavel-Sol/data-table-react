@@ -27,7 +27,7 @@ function Table(props) {
          <tbody>
             {
                props.data.map(item => {
-                  return <tr key={item.id + item.phone}>
+                  return <tr key={item.id + item.phone} onClick={props.onRowSelect.bind(null, item)}>
                      <td>{item.id}</td>
                      <td>{item.firstName}</td>
                      <td>{item.lastName}</td>

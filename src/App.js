@@ -4,6 +4,7 @@ import _ from 'lodash'
 import './App.css'
 import Loader from './components/Loader/Loader'
 import Table from './components/Table/Table'
+import DetailRowView from './components/DetailRowView/DetailRowView'
 
 class App extends React.Component {
 
@@ -11,7 +12,8 @@ class App extends React.Component {
     isLoading: true,
     data: [],
     sort: 'asc',
-    sortField: 'id'
+    sortField: 'id',
+    row: null,
   }
 
 async componentDidMount() {
@@ -38,6 +40,9 @@ onSort = sortField => {
   }) 
 }
 
+onRowSelect = row => {
+  this.setState({row})
+}
 
 
   render() {
@@ -50,7 +55,14 @@ onSort = sortField => {
           : <Table data={this.state.data}
           onSort={this.onSort}
           sort={this.state.sort}
-          sortField={this.state.sortField} />
+          sortField={this.state.sortField} 
+          onRowSelect={this.onRowSelect}/>
+        }
+
+        {
+           this.state.row
+           ? <DetailRowView person={this.state.row} />
+           : null
         }
       </div>
      );
