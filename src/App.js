@@ -6,6 +6,7 @@ import Loader from './components/Loader/Loader'
 import Table from './components/Table/Table'
 import DetailRowView from './components/DetailRowView/DetailRowView'
 import ModeSelection from  './components/ModeSelection/ModeSelection'
+import ReactPaginate from 'react-paginate'
 
 class App extends React.Component {
 
@@ -16,6 +17,7 @@ class App extends React.Component {
     sort: 'asc',
     sortField: 'id',
     row: null,
+    currentPage: 0
   }
 
 
@@ -55,10 +57,15 @@ onRowSelect = row => {
   this.setState({row})
 }
 
-
+pageChangeHandler = ({selected}) => {
+  this.setState({
+    currentPage: selected
+  })
+}
 
 
   render() {
+    const pageSize = 50
     if(!this.state.isModeSelected ) {
       return (
         <div className='container'>
@@ -68,17 +75,42 @@ onRowSelect = row => {
     }
 
 
+    const displayData = _.chunk(this.state.data, pageSize)[this.state.currentPage]
+
     return (
       <div className='container'>
         
         {
           this.state.isLoading
           ? <Loader />
-          : <Table data={this.state.data}
+          : <Table data={displayData}
           onSort={this.onSort}
           sort={this.state.sort}
           sortField={this.state.sortField} 
           onRowSelect={this.onRowSelect}/>
+        }
+
+        {
+          this.state.data.length > pageSize
+          ? <ReactPaginate
+          previousLabel={'<'}
+          nextLabel={'>'}
+          breakLabel={'...'}
+          breakClassName={'break-me'}
+          pageCount={20}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={this.pageChangeHandler}
+          containerClassName={'pagination'}
+          activeClassName={'active'}
+          pageClassName='page-item'
+          pageLinkClassName='page-link'
+          previousClassName='page-item'
+          nextClassName='page-item'
+          previousLinkClassName='page-link'
+          nextLinkClassName='page-link'
+          forcePage={this.state.currentPage}/>
+          : null
         }
 
         {
