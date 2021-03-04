@@ -5,19 +5,30 @@ import './App.css'
 import Loader from './components/Loader/Loader'
 import Table from './components/Table/Table'
 import DetailRowView from './components/DetailRowView/DetailRowView'
+import ModeSelection from  './components/ModeSelection/ModeSelection'
 
 class App extends React.Component {
 
   state = {
-    isLoading: true,
+    isModeSelected: false,
+    isLoading: false,
     data: [],
     sort: 'asc',
     sortField: 'id',
     row: null,
   }
 
-async componentDidMount() {
-  const response = await fetch('http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}')
+
+  modeSelectHandler = (url) => {
+    this.setState({
+      isModeSelected: true,
+      isLoading: true
+    })
+    this.fetchData (url)
+  }
+
+async fetchData (url) {
+  const response = await fetch(url)
 
   const data = await response.json()
 
@@ -45,7 +56,18 @@ onRowSelect = row => {
 }
 
 
+
+
   render() {
+    if(!this.state.isModeSelected ) {
+      return (
+        <div className='container'>
+          <ModeSelection onSelected= {this.modeSelectHandler}/>
+        </div>
+      )
+    }
+
+
     return (
       <div className='container'>
         
