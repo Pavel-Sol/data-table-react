@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/data-table-react/static/css/main.a4f2ed8a.chunk.css",
+    "main.js": "/data-table-react/static/js/main.65903795.chunk.js",
+    "main.js.map": "/data-table-react/static/js/main.65903795.chunk.js.map",
+    "runtime-main.js": "/data-table-react/static/js/runtime-main.a2490b70.js",
+    "runtime-main.js.map": "/data-table-react/static/js/runtime-main.a2490b70.js.map",
+    "static/css/2.150d169a.chunk.css": "/data-table-react/static/css/2.150d169a.chunk.css",
+    "static/js/2.2cc9c754.chunk.js": "/data-table-react/static/js/2.2cc9c754.chunk.js",
+    "static/js/2.2cc9c754.chunk.js.map": "/data-table-react/static/js/2.2cc9c754.chunk.js.map",
+    "static/js/3.df5ffe51.chunk.js": "/data-table-react/static/js/3.df5ffe51.chunk.js",
+    "static/js/3.df5ffe51.chunk.js.map": "/data-table-react/static/js/3.df5ffe51.chunk.js.map",
+    "index.html": "/data-table-react/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/data-table-react/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.a4f2ed8a.chunk.css.map": "/data-table-react/static/css/main.a4f2ed8a.chunk.css.map",
+    "static/js/2.2cc9c754.chunk.js.LICENSE.txt": "/data-table-react/static/js/2.2cc9c754.chunk.js.LICENSE.txt",
+    "static/media/loading.7d9c61a3.gif": "/data-table-react/static/media/loading.7d9c61a3.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a2490b70.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.2cc9c754.chunk.js",
+    "static/css/main.a4f2ed8a.chunk.css",
+    "static/js/main.65903795.chunk.js"
+  ]
+}
