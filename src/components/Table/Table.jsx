@@ -41,17 +41,17 @@ function Table(props) {
                      <td>{item.id}</td>
                      {
                         item.firstName.toLowerCase().includes(props.search.toLowerCase()) && props.search
-                           ? <td><b>{item.firstName}</b></td>
+                           ? <td style={{ color: '#e042e0' }}><b>{item.firstName}</b></td>
                            : <td>{item.firstName}</td>
                      }
                      {
                         item.lastName.toLowerCase().includes(props.search.toLowerCase()) && props.search
-                           ? <td><b>{item.lastName}</b></td>
+                           ? <td style={{ color: '#e042e0' }}><b>{item.lastName}</b></td>
                            : <td>{item.lastName}</td>
                      }
                      {
                         item.email.toLowerCase().includes(props.search.toLowerCase()) && props.search
-                           ? <td><b>{item.email}</b></td>
+                           ? <td style={{ color: '#e042e0' }}><b>{item.email}</b></td>
                            : <td>{item.email}</td>
                      }
 

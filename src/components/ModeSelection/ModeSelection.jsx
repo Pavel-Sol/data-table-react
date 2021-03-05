@@ -5,8 +5,8 @@ function ModeSelection(props) {
 
    return (
       <div className='controller' style={{ padding: '50px', margin: '0px auto', maxWidth: '400px' }}>
-         <button onClick={() => { props.onSelected(smallUrl) }} className="btn btn-primary">Малый 32 эл</button>
-         <button onClick={() => { props.onSelected(bigUrl) }} className="btn btn-success">Большой 10000 эл</button>
+         <button onClick={() => { props.onSelected(smallUrl) }} className="btn btn-primary m-1">Малый 32 эл</button>
+         <button onClick={() => { props.onSelected(bigUrl) }} className="btn btn-success m-1">Большой 10000 эл</button>
       </div>
    )
 }

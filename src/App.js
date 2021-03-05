@@ -1,6 +1,5 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import _ from 'lodash'
 import sortMetods from './sortMetods'
 import './App.css'
 import Loader from './components/Loader/Loader'
