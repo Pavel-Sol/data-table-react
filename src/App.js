@@ -109,6 +109,7 @@ getFilretedData = () => {
             onSort={this.onSort}
             data={displayData}
             sort={this.state.sort}
+            row={this.state.row}
             sortField={this.state.sortField}
             onRowSelect={this.onRowSelect}
             filteredData = {filteredData}

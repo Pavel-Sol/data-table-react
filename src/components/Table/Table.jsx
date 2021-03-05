@@ -33,7 +33,11 @@ function Table(props) {
          <tbody>
             {
                props.data.map(item => {
-                  return <tr key={item.id + item.phone} onClick={props.onRowSelect.bind(null, item)}>
+                  return <tr
+                     style={props.row == item ? ({ background: '#9ca5a5' }) : null}
+                     key={item.id + item.phone}
+                     onClick={props.onRowSelect.bind(null, item)}>
+
                      <td>{item.id}</td>
                      {
                         item.firstName.toLowerCase().includes(props.search.toLowerCase()) && props.search
