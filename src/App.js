@@ -109,7 +109,8 @@ getFilretedData = () => {
             data={displayData}
             sort={this.state.sort}
             sortField={this.state.sortField}
-            onRowSelect={this.onRowSelect}/>
+            onRowSelect={this.onRowSelect}
+            filteredData = {filteredData}/>
         </React.Fragment>
         }
 

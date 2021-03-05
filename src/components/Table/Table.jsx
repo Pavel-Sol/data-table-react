@@ -3,6 +3,12 @@ import Direction from './Direction/Direction'
 import './Table.css'
 
 function Table(props) {
+   if (props.filteredData.length === 0) {
+      return (
+         <p>По вашему запросу ничего не найдено</p>
+      )
+   }
+
    return (
       <table className='table'>
          <thead>
