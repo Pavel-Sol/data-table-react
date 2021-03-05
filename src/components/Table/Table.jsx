@@ -35,9 +35,22 @@ function Table(props) {
                props.data.map(item => {
                   return <tr key={item.id + item.phone} onClick={props.onRowSelect.bind(null, item)}>
                      <td>{item.id}</td>
-                     <td>{item.firstName}</td>
-                     <td>{item.lastName}</td>
-                     <td>{item.email}</td>
+                     {
+                        item.firstName.toLowerCase().includes(props.search.toLowerCase()) && props.search
+                           ? <td><b>{item.firstName}</b></td>
+                           : <td>{item.firstName}</td>
+                     }
+                     {
+                        item.lastName.toLowerCase().includes(props.search.toLowerCase()) && props.search
+                           ? <td><b>{item.lastName}</b></td>
+                           : <td>{item.lastName}</td>
+                     }
+                     {
+                        item.email.toLowerCase().includes(props.search.toLowerCase()) && props.search
+                           ? <td><b>{item.email}</b></td>
+                           : <td>{item.email}</td>
+                     }
+
                      <td>{item.phone}</td>
                   </tr>
                })
