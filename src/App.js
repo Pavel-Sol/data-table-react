@@ -1,6 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import _ from 'lodash'
+// import _ from 'lodash'
+import sortMetods from './sortMetods'
 import './App.css'
 import Loader from './components/Loader/Loader'
 import Table from './components/Table/Table'
@@ -38,7 +39,7 @@ async fetchData (url) {
 
   this.setState({
     isLoading: false,
-    data: _.orderBy(data, this.state.sortField, this.state.sort)
+    data: sortMetods.orderBy(data, this.state.sortField, this.state.sort)
   })
 }
 
@@ -46,7 +47,7 @@ async fetchData (url) {
 onSort = sortField => { 
   let clonedData = this.state.data.concat()
   let sort = this.state.sort === 'asc' ? 'desc' : 'asc'
-  let data = _.orderBy(clonedData, sortField, sort)
+  let data = sortMetods.orderBy(clonedData, sortField, sort)
 
   this.setState({
     data,
@@ -94,7 +95,7 @@ getFilretedData = () => {
 
     const filteredData = this.getFilretedData()
     const pageCount = Math.ceil(filteredData.length / pageSize)
-    const displayData = _.chunk(filteredData, pageSize)[this.state.currentPage]
+    const displayData = sortMetods.chunk(filteredData, pageSize)[this.state.currentPage]
 
     return (
       <div className='container'>
