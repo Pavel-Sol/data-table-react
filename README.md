@@ -1,3 +1,3 @@
 # Проект в разработке
 
-![alt tag](https://github.com/Pavel-Sol/data-table-react/tree/master/preview/preview.gif)​
+![alt tag](https://github.com/Pavel-Sol/data-table-react/blob/master/preview/preview.gif)​
